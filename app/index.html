@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+    <div>
+      <h4>This is an h4 in index.html</h4>
+    </div>
+    <div id="app"></div>
+    <div>
+      <h4>This is an h4 inindex.html after div id=app </h4>
+    </div>
+    <script src="./app.js" data-container="#app"></script>
+    <div>
+      <h4>This is an h4 inindex.html after first script</h4>
+    </div>
+    <script>
+      if (process.env.BROWSER_SYNC_CLIENT_URL) {
+        const current = document.currentScript;
+        const script = document.createElement('script');
+        script.src = process.env.BROWSER_SYNC_CLIENT_URL;
+        script.async = true;
+        current.parentNode.insertBefore(script, current);
+      }
+    </script>
+  </body>
+</html>
