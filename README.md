@@ -1,5 +1,19 @@
 # electron-react-redux-boilerplate
 
+This does not work   
+sudo setcap cap_net_raw+eip $(eval readlink -f /disk_d/share/w/github/jschr/fruit/node_modules/electron/dist/electron)   
+sudo setcap  -r $(eval readlink -f /disk_d/share/w/github/jschr/fruit/node_modules/electron/dist/electron)   
+
+npm install --save-dev 7zip-bin-linux
+
+
+https://github.com/electron-userland/electron-builder/issues/993
+$ sudo apt-get install -y xorriso
+$ USE_SYSTEM_XORRISO=true  npm run private:build:linux
+
+USE   
+$ gksudo npm run develop
+
 A minimal boilerplate to get started with [Electron](http://electron.atom.io/), [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/).
 
 Including:

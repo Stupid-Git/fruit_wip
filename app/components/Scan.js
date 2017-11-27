@@ -20,9 +20,11 @@ export default class Scan extends React.Component {
   OLDdevicesChanged(newDevices) {
     this.setState({devices: newDevices});
   }
-  devicesChanged(event,args) {
+
+//devicesChanged(sender, args) {
+  devicesChanged(sender, newDevices) {
     // console.log('args = ' + args ); //Karel
-    var newDevices = JSON.parse(args);
+    //var newDevices = JSON.parse(args);
     // console.log('newDevices = ', newDevices);
     newDevices.map(d => console.log('newDevices d.x = ', d.index));
     this.setState({ devices: newDevices });

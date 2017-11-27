@@ -17,7 +17,7 @@ export default class Connect extends Component {
   }
 
   componentDidMount() {
-    /*TODO
+
     // Grab the device for this connection and set state appropriately.
     let d = ipcRenderer.sendSync('getDevice', this.props.match.params.index);
     //OLD let d = ipcRenderer.sendSync('getDevice', this.props.params.index);
@@ -27,25 +27,27 @@ export default class Connect extends Component {
     // Tell main process to connect to device.
     ipcRenderer.send('deviceConnect', this.props.match.params.index);
     //OLD ipcRenderer.send('deviceConnect', this.props.params.index);
-   TODO  */
   }
 
-  connectStatus(status, progress) {
+  connectStatus(sender, status, progress) {
+    console.log('connectStatus: progress = ', progress);
     // Update the status of the connection attempt.
+    // https://stackoverflow.com/questions/38950051/get-element-reference-without-using-refs-in-react
     this.refs.statusbar.setStatus(status);
     this.refs.statusbar.setProgress(progress);
     // Once the progress is 100% then move to the device info page.
     if (progress === 100) {
-      //TODO      router.transitionTo('info', {index: this.props.params.index});
+      console.log('connectStatus: progress = 100%');
+      //OLD router.transitionTo('info', {index: this.props.params.index});
       //TODO      router.transitionTo('info', {index: this.props.match.params.index});
     }
   }
 
   componentWillUnmount() {
-    /*TODO
+    /*TODO*/
     // Be careful to make sure state changes aren't triggered by turning off listeners.
     ipcRenderer.removeListener('connectStatus', this.connectStatus);
-    TODO */
+    /*TODO */
   }
 
   render(){

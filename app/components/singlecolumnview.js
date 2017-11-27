@@ -13,6 +13,6 @@ export default class SingleColumnView extends React.Component {
           {this.props.children}
         </div>
       </div>
-    )
+    );
   }
 }
