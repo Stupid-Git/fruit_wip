@@ -13,6 +13,7 @@ const syncHistoryWithStore = (store, history) => {
   const { routing } = store.getState();
   if(routing && routing.location) {
     routing.location = '/'; //Karel: force to go to / on reload
+    routing.location = '/scan'; //Karel: force to go to / on reload
     history.replace(routing.location);
   }
 };

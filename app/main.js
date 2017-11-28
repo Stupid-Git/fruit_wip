@@ -265,6 +265,7 @@ function moreInitStuffAfter() {
   ipcMain.on('getServices', function(event, index) {
     // Retrieve list of all services and characteristics for a device with
     // the specified index.
+    console.log('ipcMain.on( getServices: index = ', index);
     event.returnValue = serializeServices(index);
   });
 
@@ -471,6 +472,8 @@ function findUARTCharacteristics(services) {
 
 function setConnectStatus(status, percent) {
   console.log('##### setConnectStatus percent = ' + percent);
+  //if(percent === undefined)
+  //  return;
   // Set the current device connection status as shown in the UI.
   // Will broadcast out the change on the connectStatus IPC event.
   connectStatus = status;
@@ -496,8 +499,6 @@ function connected(error) {
   });
   // Connected, now kick off service discovery.
   setConnectStatus('Discovering Services...', 66);
-  setConnectStatus('Connected', 100);
-  /*TODO
   selectedDevice.discoverAllServicesAndCharacteristics(function(error, services, characteristics) {
     // Handle if there was an error.
     if (error) {
@@ -512,7 +513,6 @@ function connected(error) {
     // the information page.
     setConnectStatus('Connected', 100);
   });
-  TODO*/
 }
 
 function disconnect() {

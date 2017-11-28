@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--
     <title>My App</title>
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adafruit Bluefruit LE</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+    body {
+      margin-top: 70px;
+    }
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    </style>
   </head>
 
   <body>
-    <div>
-      <h4>This is an h4 in index.html</h4>
-    </div>
     <div id="app"></div>
-    <div>
-      <h4>This is an h4 inindex.html after div id=app </h4>
-    </div>
     <script src="./app.js" data-container="#app"></script>
-    <div>
-      <h4>This is an h4 inindex.html after first script</h4>
-    </div>
     <script>
       if (process.env.BROWSER_SYNC_CLIENT_URL) {
         const current = document.currentScript;

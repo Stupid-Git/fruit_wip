@@ -39,7 +39,10 @@ export default class Connect extends Component {
     if (progress === 100) {
       console.log('connectStatus: progress = 100%');
       //OLD router.transitionTo('info', {index: this.props.params.index});
-      //TODO      router.transitionTo('info', {index: this.props.match.params.index});
+      //TODO router.transitionTo('info', {index: this.props.match.params.index});
+      let i = this.props.match.params.index;
+      this.props.history.push('/info/' + i);
+      //REF {this.state.devices.map(d => <Link to={'connect/'+d.index} className='list-group-item' key={d.index}>{d.name} [{d.address}]</Link>)}
     }
   }
 
